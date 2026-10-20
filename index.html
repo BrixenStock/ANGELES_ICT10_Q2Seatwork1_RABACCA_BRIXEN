@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW#1</title>
+
+    <style>
+        body {
+            color-scheme: dark;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            background: #11101f;
+            color: #e9e8f2;
+        }
+
+        .checker {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 380px;
+            padding: 24px;
+            border: 1px solid #514681;
+            border-radius: 8px;
+            background: #1b1930;
+        }
+
+        .checker h1 {
+            margin: 0 0 20px;
+            color: #b9e9f5;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .form {
+            display: grid;
+            gap: 10px;
+        }
+
+        .name-input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #514c68;
+            border-radius: 4px;
+            background: #11101f;
+            color: #e9e8f2;
+            font-size: 1rem;
+        }
+
+        .name-input:focus {
+            outline: 2px solid #91d9eb;
+            outline-offset: 1px;
+        }
+
+        .check-button {
+            padding: 10px;
+            border: 0;
+            border-radius: 4px;
+            background: #6656a3;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .check-button:hover {
+            background: #7868b5;
+        }
+
+        #message {
+            margin: 16px 0;
+            color: #b9e9f5;
+        }
+
+        .member-list {
+            padding-top: 12px;
+            border-top: 1px solid #39354e;
+        }
+
+        .member-list h2 {
+            margin: 0 0 8px;
+            color: #b9e9f5;
+            font-size: 1.1rem;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.3.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.3.1/core.js"></script>
+</head>
+<body>
+    <main class="checker">
+        <h1>ICT Club Checker</h1>
+
+        <div class="form">
+            <input type="text" id="firstname" class="name-input" placeholder="First name" aria-label="First name">
+            <input type="text" id="lastname" class="name-input" placeholder="Last name" aria-label="Last name">
+            <button type="button" class="check-button" py-click="append_value">Enter</button>
+        </div>
+
+        <p id="message"></p>
+
+        <section class="member-list">
+            <h2>Members</h2>
+            <div id="output"></div>
+        </section>
+    </main>
+
+    <py-script src="main.py"></py-script>
+</body>
+</html>
